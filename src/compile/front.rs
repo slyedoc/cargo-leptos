@@ -186,10 +186,13 @@ async fn bindgen(proj: &Project) -> Result<Outcome<Product>> {
     Ok(Outcome::Success(Product::Front))
 }
 
-fn optimize(file: &Utf8Path) -> Result<()> {
-    OptimizationOptions::new_optimize_for_size_aggressively()
-        .run(file, file)
-        .dot()
+fn optimize(_file: &Utf8Path) -> Result<()> {
+
+    debug!("not running wasm-opt for now");
+    Ok(())
+    // OptimizationOptions::new_optimize_for_size_aggressively()
+    //     .run(file, file)
+    //     .dot()
 }
 
 fn minify<JS: AsRef<str>>(js: JS) -> Result<String> {

@@ -1,0 +1,38 @@
+segmentation fault
+OptimizationOptions {
+    reader: ReaderOptions {
+        file_type: Any,
+    },
+    writer: WriterOptions {
+        file_type: Wasm,
+    },
+    inlining: InliningOptions {
+        always_inline_max_size: 2,
+        one_caller_inline_max_size: 4294967295,
+        flexible_inline_max_size: 20,
+        allow_functions_with_loops: false,
+        partial_inlining_ifs: 0,
+    },
+    passopts: PassOptions {
+        validate: true,
+        validate_globally: true,
+        optimize_level: Level2,
+        shrink_level: Level0,
+        traps_never_happen: false,
+        low_memory_unused: false,
+        fast_math: false,
+        zero_filled_memory: false,
+        debug_info: false,
+        arguments: {},
+    },
+    passes: Passes {
+        add_default_passes: true,
+        more_passes: [],
+    },
+    features: Features {
+        baseline: Default,
+        enabled: {},
+        disabled: {},
+    },
+    converge: false,
+}
